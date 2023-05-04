@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>JSONL Creator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <!-- Add this dropdown menu to display existing files -->
+    <select id="file-selector">
+    </select>
+    <button type="button" onclick="setCurrentFile()">Set Current File</button>
+  <form id="create-form">
+    <label for="filename">Filename:</label>
+    <input type="text" id="filename" name="filename">
+    <button type="button" onclick="createFile()">Create File</button>
+  </form>
+  <br>
+  <form id="add-form">
+    <label for="prompt">Prompt:</label><br>
+    <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
+    <label for="completion">Completion:</label><br>
+    <textarea id="completion" name="completion" rows="4" cols="50"></textarea>
+    <br><br>
+    <button type="button" onclick="addLine()">Add Line</button>
+  </form>
+  <br>
+  <form id="save-form">
+    <button type="button" onclick="saveFile()">Save File and Add to Collection</button>
+  </form>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
