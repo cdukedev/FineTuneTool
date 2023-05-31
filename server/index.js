@@ -57,7 +57,12 @@ app.post("/create", (req, res) => {
 app.post("/addLine", (req, res) => {
   const { filename, prompt, completion } = req.body;
   const filePath = path.join(__dirname, "files", `${filename}`);
-  const fileContent = `{"prompt": "${prompt}? \\n\\n###\\n\\n", "completion": " ${completion}. ###\\n"}`;
+  
+  // Replace newline characters with spaces
+  const formattedPrompt = prompt.replace(/\r?\n|\r/g, " ");
+  const formattedCompletion = completion.replace(/\r?\n|\r/g, " ");
+  
+  const fileContent = `{"prompt": "${formattedPrompt}? \\n\\n###\\n\\n", "completion": " ${formattedCompletion}. ###\\n"}`;
 
   fs.appendFile(filePath, fileContent + "\n", (err) => {
     if (err) {
@@ -69,6 +74,7 @@ app.post("/addLine", (req, res) => {
     }
   });
 });
+
 
 // POST endpoint for adding a JSONL file to the collection
 app.post("/addToCollection", (req, res) => {

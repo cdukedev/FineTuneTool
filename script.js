@@ -20,7 +20,14 @@ async function updateFileList() {
       fileSelector.appendChild(option);
     }
     // Get the current filename from localStorage and set it as the selected value
-    const currentFilename = localStorage.getItem("currentFilename");
+    let currentFilename = localStorage.getItem("currentFilename");
+
+    // If there's no saved filename in localStorage, set the first file in the list as the default value
+    if (!currentFilename && files.length > 0) {
+      currentFilename = files[0];
+      localStorage.setItem("currentFilename", currentFilename);
+    }
+
     if (currentFilename) {
       fileSelector.value = currentFilename;
     }
