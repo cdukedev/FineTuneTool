@@ -2,40 +2,58 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>JSONL Creator</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8">
+    <title>JSONL Creator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="index.css">
-
 </head>
 
 <body>
-    <!-- Add this dropdown menu to display existing files -->
-    <select id="file-selector">
-    </select>
-    <button type="button" onclick="setCurrentFile()">Set Current File</button>
-  <form id="create-form">
-    <label for="filename">Filename:</label>
-    <input type="text" id="filename" name="filename">
-    <button type="button" onclick="createFile()">Create File</button>
-  </form>
-  <br>
-  <form id="add-form">
-    <label for="prompt">Prompt:</label><br>
-    <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
-    <label for="completion">Completion:</label><br>
-    <textarea id="completion" name="completion" rows="4" cols="50"></textarea>
-    <br><br>
-    <button type="button" onclick="addLine()">Add Line</button>
-  </form>
-  <br>
-  <form id="save-form">
-    <button type="button" onclick="saveFile()">Save File and Add to Collection</button>
-  </form>
+    <div class="container">
+        <div class="row section">
+            <div class="input-field col s12">
+                <select id="file-selector" class="browser-default">
+                </select>
+                <button class="btn waves-effect waves-light" type="button" onclick="setCurrentFile()">Set Current File</button>
+            </div>
+        </div>
 
-  <script src="script.js"></script>
+        <div class="row section">
+            <form id="create-form" class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" id="filename" name="filename">
+                        <label for="filename">Filename:</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="button" onclick="createFile()">Create File</button>
+                </div>
+            </form>
+        </div>
 
+        <form id="add-form" class="section">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="prompt" name="prompt" class="materialize-textarea"></textarea>
+                    <label for="prompt">Prompt:</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <textarea id="completion" name="completion" class="materialize-textarea"></textarea>
+                    <label for="completion">Completion:</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="button" onclick="addLine()">Add Line</button>
+        </form>
+
+        <form id="save-form">
+            <button class="btn waves-effect waves-light" type="button" onclick="saveFile()">Save File and Add to Collection</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

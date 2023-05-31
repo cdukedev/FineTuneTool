@@ -1,3 +1,42 @@
 #file-selector {
     width: 200px;
 }
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    color: black !important;
+    margin-top: 20px;
+}
+
+
+body {
+    background: linear-gradient(to right, #75B09C, #A0CA92, #D8F793);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.8); /* white with 80% opacity */
+    margin: 2rem 0; /* add some vertical margin for separation */
+    padding: 20px; /* add some padding for space around the content */
+    border-radius: 8px; /* optional: round the corners */
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2); /* optional: add a subtle shadow for depth */
+}
+
+
+#save-form {
+    padding-top: 2rem;
+}
+
+
+button {
+    margin-top: 1rem;
+}

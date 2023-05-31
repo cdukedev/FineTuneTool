@@ -1,4 +1,10 @@
 let filename = "";
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll("select");
+  var instances = M.FormSelect.init(elems);
+});
+
 function setCurrentFile() {
   const fileSelector = document.getElementById("file-selector");
   const selectedFile = fileSelector.value;
